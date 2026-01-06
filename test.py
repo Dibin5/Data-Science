@@ -14,3 +14,13 @@ print(a + b)
 a = int(input("enter a number: "))
 b = int(input("enter another number: "))
 print(a + b)
+
+
+def add(a, b):
+    return a + b
+
+
+m = int(input("enter a number: "))
+n = int(input("enter another number: "))
+c = add(m, n)
+print(c)
