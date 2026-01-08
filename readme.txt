@@ -13,3 +13,5 @@ git remote -v
 how to get git status?
 git status
 
+what is python?
+python is a high level object oriented programing language.
