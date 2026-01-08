@@ -6,3 +6,10 @@ steps for git commit instruction
 
 Important terminal commands
 clear
+
+how to get git remote information?
+git remote -v
+
+how to get git status?
+git status
+

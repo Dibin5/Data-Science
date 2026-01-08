@@ -24,3 +24,6 @@ m = int(input("enter a number: "))
 n = int(input("enter another number: "))
 c = add(m, n)
 print(c)
+b = 5
+c = 10
+print(b * c)
