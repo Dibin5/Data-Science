@@ -15,3 +15,12 @@ git status
 
 what is python?
 python is a high level object oriented programing language.
+
+1. created virtual environment
+create command --> python -m venv .venv
+activate command --> .venv\Scripts\Activate
+2. created gitignore
+to ignore git tracking
+3. maintained requirement.txt
+to save requirement of dependencies
+create command --> pip freeze > requirements.txt
