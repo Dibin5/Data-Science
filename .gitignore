@@ -1,2 +1,7 @@
 .venv/
 global_superstore_2020.xlsx
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+logs/
