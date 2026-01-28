@@ -1,29 +1,12 @@
-print("hello, world!")
-print(2)
-print(2 + 2)
-print("2" + "2")
+from log import *
 
-x = 2
-y = 3
-print(x + y)
-
-a = input("enter a number: ")
-b = input("enter another number: ")
-print(a + b)
+logger = logging.getLogger()
 
 a = int(input("enter a number: "))
+logger.info(f"the value of a is {a}")
+
 b = int(input("enter another number: "))
-print(a + b)
+logger.info(f"the value of b is {b}")
 
-
-def add(a, b):
-    return a + b
-
-
-m = int(input("enter a number: "))
-n = int(input("enter another number: "))
-c = add(m, n)
-print(c)
-b = 5
-c = 10
-print(b * c)
+sum = a + b
+logger.info(f"the sum of a and b is {sum}")
