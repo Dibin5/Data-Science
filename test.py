@@ -1,12 +1,11 @@
-from log import *
+from connector import *
+from sql import *
+from config import *
 
-logger = logging.getLogger()
+conn = msSQL_conn(msSQL_conn_str)
+df = read_database(msSQL_query, conn)
+print(df)
 
-a = int(input("enter a number: "))
-logger.info(f"the value of a is {a}")
-
-b = int(input("enter another number: "))
-logger.info(f"the value of b is {b}")
-
-sum = a + b
-logger.info(f"the sum of a and b is {sum}")
+# 1. read excel
+# 2. write the excel file into table
+# 3. extract data from table

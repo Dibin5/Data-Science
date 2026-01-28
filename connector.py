@@ -1,32 +1,32 @@
+from log import *
 import pyodbc
 import pandas as pd
 
-conn_str = (
-    "DRIVER={ODBC Driver 18 for SQL Server};"
-    "SERVER=LAPTOP-OBQA39GB;"
-    "DATABASE=test;"
-    "Trusted_Connection=yes;"
-    "Encrypt=yes;"
-    "TrustServerCertificate=yes;"
-)
 
-conn = pyodbc.connect(conn_str)
+logger = logging.getLogger()
 
-# ---------- QUERY ----------
-query = """
-SELECT TOP (10)
-      [Row ID],
-      [Order ID],
-      [Order Date],
-      [Ship Date],
-      [Ship Mode],
-      [Customer ID],
-      [Customer Name]
-FROM [test].[dbo].[order_dibin]
-"""
+
+def msSQL_conn(config):
+    logger.info(f"connecting to {config}")
+    conn = pyodbc.connect(config)
+    return conn
+
 
 # ---------- READ INTO DATAFRAME ----------
-df = pd.read_sql(query, conn)
-print(df)
+def read_database(query, conn):
+    logger.info(f"running this query {query}")
+    df = pd.read_sql(query, conn)
+    logger.info(df)
+    conn.close()
+    return df
 
-conn.close()
+
+# ---------- STORE DATAFRAME INTO TABLE ----------
+def write_database(df, table_name, engine):
+    df.to_sql(
+        name=table_name,  # table name
+        con=engine,
+        if_exists="append",  # append / replace / fail
+        index=False,
+    )
+    logger.info("DataFrame inserted into SQL Server table successfully")
