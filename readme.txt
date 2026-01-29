@@ -24,3 +24,11 @@ to ignore git tracking
 3. maintained requirement.txt
 to save requirement of dependencies
 create command --> pip freeze > requirements.txt
+
+
+to create ETL
+create connector.py --> supporting moudels (config.py, sql.py, log.py )
+created virtual environment to manage all the installed moudels
+maintained requirements.txt to know what modules are installed
+
+
