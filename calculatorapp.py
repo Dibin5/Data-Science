@@ -1,6 +1,8 @@
 a = float(input("enter the number: "))
 operator = input("enter the operator (+, -, *, /): ")
 b = float(input("enter the number: "))
+result = None
+
 if operator == "+":
     result = a + b
 elif operator == "-":
