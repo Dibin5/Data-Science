@@ -6,13 +6,16 @@ from config import *
 df = read_database(msSQL_query, conn)
 print(df)
 """
+
 # 1. read excel
-df = pd.read_excel("global_superstore_2020.xlsx").head(5)
+df = pd.read_excel("sales.xlsx").head(1000)
 print(df)
+
 # 2. write the excel file into table
-table_name = "excel_book"
+table_name = "sales"
 engine = msSQL_engine
 write_database(df, table_name, engine)
+
 # 3. extract data from table
 query = msSQL_query
 config = msSQL_conn_str
